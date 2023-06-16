@@ -62,7 +62,6 @@ do {
         $output = "$env:TEMP\$($chosenScript.Name).ps1"
         Invoke-WebRequest -Uri $chosenScript.Url -OutFile $output
         & $output
-        Remove-Item $output
 
     } until ($false)
 
