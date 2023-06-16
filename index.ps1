@@ -4,12 +4,17 @@ $scripts = @{}
 # Ajout des scripts au dictionnaire
 $scripts["1"] = @{
     "Name" = "Desactiver redirection IE"
-    "URL" = "https://raw.githubusercontent.com/DcSault/script_powershell/main/desactiver_redirection_ie.ps1"
+    "URL" = "https://raw.githubusercontent.com/DcSault/script_powershell/main/Script/desactiver_redirection_ie.ps1"
 }
 
 $scripts["2"] = @{
-    "Name" = "Nouveau script"
+    "Name" = "Template"
     "URL" = "https://example.com/nouveau_script.ps1"
+}
+
+$scripts["3"] = @{
+    "Name" = "PingTools - JSON MAKER "
+    "URL" = "https://raw.githubusercontent.com/DcSault/script_powershell/main/Script/Ping_V2.5%20-%20Beta%20-%20Json.ps1"
 }
 
 # Boucle principale
