@@ -41,7 +41,7 @@ do {
     }
     Write-Host "(Q) Quitter"
 
-    $folderChoice = Read-Host "`nEntrez le numéro du dossier à ouvrir ou 'Q' pour quitter"
+    $folderChoice = Read-Host "`nEntrez le numero du dossier a ouvrir ou 'Q' pour quitter"
     if ($folderChoice -eq 'Q') { exit }
 
     $chosenFolder = $scriptFolders[$folderChoice - 1]
@@ -53,7 +53,7 @@ do {
         }
         Write-Host "(Q) Retour"
 
-        $scriptChoice = Read-Host "`nEntrez le numéro du script à exécuter ou 'Q' pour revenir"
+        $scriptChoice = Read-Host "`nEntrez le numero du script a executer ou 'Q' pour revenir"
         if ($scriptChoice -eq 'Q') { break }
 
         $chosenScript = $chosenFolder.Scripts[$scriptChoice - 1]
