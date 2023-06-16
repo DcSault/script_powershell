@@ -16,6 +16,20 @@ $scripts["1"] = @{
     }
 }
 
+$scripts["2"] = @{
+    "Name" = "Dossier 2"
+    "Scripts" = @{
+        "1" = @{
+            "Name" = "Script 1 dans Dossier 2"
+            "URL" = "https://example.com/script1_dossier2.ps1"
+        }
+        "2" = @{
+            "Name" = "Script 2 dans Dossier 2"
+            "URL" = "https://example.com/script2_dossier2.ps1"
+        }
+    }
+}
+
 # Boucle principale
 while ($true) {
     # Affichage des scripts disponibles
