@@ -25,9 +25,11 @@ while ($true) {
     $scriptChoice = Read-Host -Prompt "`nEntrez le numéro du script à exécuter ou 'Q' pour quitter"
 
     # Vérifie si l'utilisateur a choisi de quitter
-    if ($scriptChoice -eq "Q") {
-        break
+    # Vérifie si l'utilisateur a choisi de quitter
+    if ($scriptChoice.ToUpper() -eq "Q") {
+    break
     }
+
 
     # Vérifie si le script choisi existe dans le dictionnaire
     if ($scripts.ContainsKey($scriptChoice)) {
@@ -38,7 +40,7 @@ while ($true) {
         Invoke-WebRequest -Uri $chosenScript.URL -OutFile $scriptOutput -UseBasicParsing
 
         # Exécution du script choisi
-        Write-Host "`n=== EXÉCUTION DU SCRIPT ==="
+        Write-Host "`n=== EXECUTION DU SCRIPT ==="
         . $scriptOutput
     } else {
         Write-Host "`nErreur : Le script choisi n'existe pas."
