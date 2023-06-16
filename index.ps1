@@ -3,7 +3,7 @@ $scriptFolders = @()
 
 # Définir les dossiers de scripts
 $folder1 = @{
-    Name = "Trousse_A_Outils";
+    Name = "Trousse_a_Outils";
     Scripts = @(
         @{
             Name = "IE_BHO";
