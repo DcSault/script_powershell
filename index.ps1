@@ -1,3 +1,6 @@
+# Changer la couleur de la console PowerShell
+Set-PSReadLineOption -TokenKind Command -ForegroundColor black
+
 # Définition d'un dictionnaire de scripts
 $scripts = @{}
 
@@ -25,11 +28,9 @@ while ($true) {
     $scriptChoice = Read-Host -Prompt "`nEntrez le numéro du script à exécuter ou 'Q' pour quitter"
 
     # Vérifie si l'utilisateur a choisi de quitter
-    # Vérifie si l'utilisateur a choisi de quitter
     if ($scriptChoice.ToUpper() -eq "Q") {
-    break
+        break
     }
-
 
     # Vérifie si le script choisi existe dans le dictionnaire
     if ($scripts.ContainsKey($scriptChoice)) {
@@ -40,8 +41,11 @@ while ($true) {
         Invoke-WebRequest -Uri $chosenScript.URL -OutFile $scriptOutput -UseBasicParsing
 
         # Exécution du script choisi
-        Write-Host "`n=== EXECUTION DU SCRIPT ==="
+        Write-Host "`n=== EXÉCUTION DU SCRIPT ==="
         . $scriptOutput
+
+        # Ajoute une ligne vide après l'exécution du script
+        Write-Host "`n"
     } else {
         Write-Host "`nErreur : Le script choisi n'existe pas."
     }
