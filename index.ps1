@@ -7,7 +7,7 @@ $folder1 = @{
     Scripts = @(
         @{
             Name = "IE_BHO";
-            Url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/desactiver_redirection_ie.ps1"
+            Url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/Script/desactiver_redirection_ie.ps1"
         },
         @{
             Name = "Exemple 3";
