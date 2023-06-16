@@ -22,7 +22,7 @@ while ($true) {
     Write-Host "Q - Quitter"
 
     # Demande à l'utilisateur de choisir un script à exécuter
-    $scriptChoice = Read-Host -Prompt "`nEntrez le numéro du script à executer ou 'Q' pour quitter"
+    $scriptChoice = Read-Host -Prompt "`nEntrez le numero du script a executer ou 'Q' pour quitter"
 
     # Vérifie si l'utilisateur a choisi de quitter
     if ($scriptChoice.ToUpper() -eq "Q") {
