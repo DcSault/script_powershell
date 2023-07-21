@@ -6,12 +6,12 @@ $folder1 = @{
     Name = "Trousse_a_Outils";
     Scripts = @(
         @{
-            Name = "IE_BHO";
-            Url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/Script/desactiver_redirection_ie.ps1"
+            Name = "RediIE";
+            Url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/Script/RediIE.ps1"
         },
         @{
-            Name = "Exemple 3";
-            Url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/script2.ps1"
+            Name = "SoftwareList";
+            Url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/Script/SoftwareList.ps1"
         }
     )
 }
@@ -21,7 +21,7 @@ $folder2 = @{
     Scripts = @(
         @{
             Name = "Ping Tools";
-            Url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/Script/Ping_V2.5%20-%20Beta%20-%20Json.ps1"
+            Url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/Script/Ping_V2.6.ps1"
         },
         @{
             Name = "Exemple 2";
