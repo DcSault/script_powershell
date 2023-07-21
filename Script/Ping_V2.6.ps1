@@ -12,10 +12,33 @@ if (-not (Test-Path -Path $RepertoireLogs)) {
 }
 
 $donneesHotes = @{}
-$fichierLog = Join-Path -Path $RepertoireLogs -ChildPath "tous_les_hotes.json"
+$nomPoste = $env:COMPUTERNAME
 
 # Demande le numéro de dossier
 $numeroDossier = Read-Host -Prompt "Entrez le numéro de dossier"
+
+function Generate-RandomString {
+    param (
+        [int] $Length
+    )
+    
+    $characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    $randomString = ""
+    
+    for ($i = 1; $i -le $Length; $i++) {
+        $randomIndex = Get-Random -Minimum 0 -Maximum $characters.Length
+        $randomChar = $characters[$randomIndex]
+        $randomString += $randomChar
+    }
+    
+    return $randomString
+}
+
+$nombreAleatoire = Generate-RandomString -Length 6
+$nombreAleatoire = $nombreAleatoire.ToUpper()
+$nombreAleatoire = $nombreAleatoire -replace "_", "-"
+
+$fichierLog = Join-Path -Path $RepertoireLogs -ChildPath "${nomPoste}-${numeroDossier}-${nombreAleatoire}.json"
 
 foreach ($NomHote in $NomsHotes) {
     $donneesHotes[$NomHote] = @{
@@ -24,7 +47,7 @@ foreach ($NomHote in $NomsHotes) {
         "LatenceTotale" = 0
         "NombrePings" = 0
         "Resultats" = @()
-        "NomPoste" = $env:COMPUTERNAME  # Ajoute le nom du poste au fichier JSON
+        "NomPoste" = $nomPoste  # Ajoute le nom du poste au fichier JSON
         "NumeroDossier" = $numeroDossier  # Ajoute le numéro de dossier au fichier JSON
     }
 }
@@ -61,9 +84,9 @@ while (($dureeArretSecondes -eq 0) -or ((Get-Date) - $heureDebut).TotalSeconds -
         $donneesHotes[$NomHote]["LatenceMoyenne"] = $latenceMoyenne
 
         $donneesHotes[$NomHote]["Resultats"] += $messageResultat
-
-        $donneesHotes | ConvertTo-Json -Depth 100 | Set-Content $fichierLog
     }
+
+    $donneesHotes | ConvertTo-Json -Depth 100 | Set-Content -Path $fichierLog
 
     Start-Sleep -Seconds $DelaiEntrePings
 }
