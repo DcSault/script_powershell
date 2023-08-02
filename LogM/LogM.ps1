@@ -10,7 +10,7 @@ $latestLogFile = Get-ChildItem -Path $folderPath -Filter *.log | Sort-Object Las
 Write-Output "Fichier le plus récent: $($latestLogFile.FullName)"
 
 # Utilisez Invoke-RestMethod pour obtenir le fichier JSON de la liste d'erreurs
-$url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/erreur.json"
+$url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/LogM/erreur.json"
 $errorList = Invoke-RestMethod -Uri $url
 
 # Lisez le contenu du fichier log
