@@ -40,3 +40,4 @@ foreach ($err in $errorList) {
         $foundErrors[$err.code] = $true
     }
 }
+pause

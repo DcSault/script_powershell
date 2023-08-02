@@ -1,8 +1,8 @@
 [
     {
         "code": "Occurence Multiple",
-        "description": "Une ou plusieurs annexe et en double",
-        "solution": "Vérifiez si la base de données est en ligne et si les informations de connexion sont correctes"
+        "description": "Une ou plusieurs annexe et en double ou qui porte le même nom",
+        "solution": "Demander au client s'il n'y a pas une annexe en double ou qu'il porte deux fois le même nom"
     },
     {
         "code": "Erreur non gérée: The handle(2) does not exist or already free.",
