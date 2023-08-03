@@ -19,12 +19,5 @@
     "description": "Erreur de dépassement de mémoire",
     "solution": "Essayez de fermer certaines applications pour libérer de la mémoire",
     "tda": "TDA10"
-  },
-  {
-    "id": 4,
-    "code": "L'accès à la clé de Registre 'HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Office\\12.0\\Common\\Security\\Trusted Protocols\\All Applications\\inot:' est refusé.",
-    "description": "Erreur générique",
-    "solution": "aucune solution, non bloquant",
-    "tda": "Pas de TDA"
   }
 ]
