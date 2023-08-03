@@ -10,11 +10,5 @@
     "description": "Erreur de dépassement de mémoire",
     "solution": "Essayez de fermer certaines applications pour libérer de la mémoire",
     "tda": "TDA1"
-  },
-  {
-    "code": "TEST",
-    "description": "TEST",
-    "solution": "TEST",
-    "tda": "TEST"
   }
 ]
