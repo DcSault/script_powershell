@@ -1,11 +1,5 @@
 [
   {
-    "code": "Erreur non gérée: The handle(2) does not exist or already free.",
-    "description": "Erreur de DXS",
-    "solution": "Vérifiez le chemin du fichier et assurez-vous qu'il existe",
-    "tda": "TDA1"
-  },
-  {
     "code": "ERR003",
     "description": "Erreur de dépassement de mémoire",
     "solution": "Essayez de fermer certaines applications pour libérer de la mémoire",
