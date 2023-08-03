@@ -1,20 +1,20 @@
 [
-  {
-    "code": "ERR003",
-    "description": "Erreur de dépassement de mémoire",
-    "solution": "Essayez de fermer certaines applications pour libérer de la mémoire",
-    "tda": "TDA1"
-  },
-  {
-    "code": "Test",
-    "description": "Test",
-    "solution": "Test",
-    "tda": "002"
-  },
-  {
-    "code": "Test_02",
-    "description": "Test_02",
-    "solution": "Test_02",
-    "tda": "Test_02"
-  }
+    {
+        "code": "Occurence Multiple",
+        "description": "Une ou plusieurs annexe et en double ou qui porte le même nom",
+        "solution": "Demander au client s'il n'y a pas une annexe en double ou qu'il porte deux fois le même nom",
+        "tda": "TDA1"
+    },
+    {
+        "code": "Erreur non gérée: The handle(2) does not exist or already free.",
+        "description": "Erreur de DXS",
+        "solution": "Vérifiez le chemin du fichier et assurez-vous qu'il existe",
+        "tda": "TDA1"
+    },
+    {
+        "code": "ERR003",
+        "description": "Erreur de dépassement de mémoire",
+        "solution": "Essayez de fermer certaines applications pour libérer de la mémoire",
+        "tda": "TDA1"
+    }
 ]
