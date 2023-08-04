@@ -42,8 +42,8 @@ foreach ($err in $errorList) {
     }
 }
 
-# Pause et demande à l'utilisateur s'il souhaite ouvrir le fichier de journal
-Write-Host "`nVoulez-vous ouvrir le fichier de journal dans le Bloc-notes ? (O/N)`n"
+# Pause et demande à l'utilisateur s'il souhaite ouvrir le fichier de log
+Write-Host "`nVoulez-vous ouvrir le fichier de log micen4 dans le Bloc-notes ? (O/N)`n"
 $input = Read-Host
 
 # Vérifiez si l'utilisateur a répondu par 'O' ou 'o'
