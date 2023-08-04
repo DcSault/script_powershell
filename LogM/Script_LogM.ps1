@@ -1,7 +1,22 @@
-# Powershell script pour trouver le fichier .log le plus récent et chercher une erreur définitive dans une liste
+# Demandez à l'utilisateur de choisir le répertoire
+Write-Host "`nVeuillez choisir le logiciel:`n"
+Write-Host "1) MICEN4U`n2) Inot`n"
 
-# Définissez le chemin du dossier
-$folderPath = "C:\ProgramData\MICEN4\logs" # remplacez par votre chemin
+# Lisez le choix de l'utilisateur
+$userChoice = Read-Host "Votre choix"
+
+# Définissez le chemin du dossier en fonction du choix de l'utilisateur
+switch ($userChoice) {
+    "1" { $folderPath = "C:\ProgramData\MICEN4\logs" } # remplacez par votre chemin
+    "2" { $folderPath = "C:\ProgramData\MICEN4\logs" } # remplacez par votre chemin
+    default { Write-Host "Choix non reconnu, veuillez réessayer."; exit }
+}
+
+# Vérifiez si le dossier existe
+if (!(Test-Path -Path $folderPath)) {
+    Write-Host "Le dossier spécifié n'existe pas : $folderPath"
+    exit
+}
 
 # Obtenez le fichier .log le plus récent
 $latestLogFile = Get-ChildItem -Path $folderPath -Filter *.log | Sort-Object LastAccessTime -Descending | Select-Object -First 1
