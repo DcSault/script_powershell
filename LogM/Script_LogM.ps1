@@ -1,14 +1,25 @@
 # Demandez à l'utilisateur de choisir le répertoire
-Write-Host "`nVeuillez choisir le logiciel:`n"
-Write-Host "1) MICEN4U`n2) Inot`n"
+Write-Host "`nVeuillez choisir le répertoire:`n"
+Write-Host "1) MICEN4`n2) INOT`n"
 
 # Lisez le choix de l'utilisateur
 $userChoice = Read-Host "Votre choix"
 
-# Définissez le chemin du dossier en fonction du choix de l'utilisateur
+# Définissez le chemin du dossier et le filtre en fonction du choix de l'utilisateur
+$filter = "*.log"
 switch ($userChoice) {
-    "1" { $folderPath = "C:\ProgramData\MICEN4\logs" } # remplacez par votre chemin
-    "2" { $folderPath = "C:\ProgramData\MICEN4\logs" } # remplacez par votre chemin
+    "1" { $folderPath = "C:\ProgramData\MICEN4\logs" }
+    "2" { 
+        $folderPath = Join-Path -Path $Env:LOCALAPPDATA -ChildPath "GenApi\RedactionActes\Log"
+        Write-Host "`nVeuillez choisir le type de log:`n"
+        Write-Host "1) Authentification`n2) Exception`n"
+        $userSubChoice = Read-Host "Votre choix"
+        switch ($userSubChoice) {
+            "1" { $filter = "Log_Authentification*.log" }
+            "2" { $filter = "iNot.Exceptions*.log" }
+            default { Write-Host "Choix non reconnu, veuillez réessayer."; exit }
+        }
+    }
     default { Write-Host "Choix non reconnu, veuillez réessayer."; exit }
 }
 
@@ -18,8 +29,8 @@ if (!(Test-Path -Path $folderPath)) {
     exit
 }
 
-# Obtenez le fichier .log le plus récent
-$latestLogFile = Get-ChildItem -Path $folderPath -Filter *.log | Sort-Object LastAccessTime -Descending | Select-Object -First 1
+# Obtenez le fichier .log le plus récent en utilisant le filtre
+$latestLogFile = Get-ChildItem -Path $folderPath -Filter $filter | Sort-Object LastAccessTime -Descending | Select-Object -First 1
 
 # Imprimez le nom du fichier le plus récent avec une ligne de séparation
 Write-Host "`n==================================================`n"
