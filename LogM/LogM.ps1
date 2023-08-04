@@ -12,7 +12,7 @@ Write-Host "Fichier le plus récent: $($latestLogFile.FullName)" -ForegroundColo
 Write-Host "`n==================================================`n"
 
 # Utilisez Invoke-RestMethod pour obtenir le fichier JSON de la liste d'erreurs
-$url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/LogM/erreur.json"
+$url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/LogM/erreur.json?$(Get-Date -Format o)"
 $errorList = Invoke-RestMethod -Uri $url
 
 # Lisez le contenu du fichier log
