@@ -2,15 +2,15 @@
   {
     "id": 1,
     "code": "Occurence Multiple",
-    "description": "AAE/AAED  | Une ou plusieurs annexe et en double ou qui porte le même nom",
+    "description": "MicenU - Une ou plusieurs annexe et en double ou qui porte le même nom",
     "solution": "Demander au client s'il n'y a pas une annexe en double ou qu'il porte deux fois le même nom",
     "tda": "02"
   },
   {
     "id": 4,
     "code": "Vive le support N3",
-    "description": "Le support N2 c'est moins bien",
-    "solution": "Abdessamad passe au support N3 !",
+    "description": "Inot | Le support N2 c'est moins bien",
+    "solution": " Abdessamad passe au support N3 !",
     "tda": "TDA Abdessamad passe au support N3 !"
   }
 ]
