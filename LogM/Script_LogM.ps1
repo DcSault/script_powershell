@@ -1,3 +1,11 @@
+# Définissez l'encodage de la console sur UTF-8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+# Message de bienvenue stylisé
+Write-Host "`n==================================================`n" -ForegroundColor Cyan
+Write-Host "****************** Support Micen U ****************" -ForegroundColor Yellow
+Write-Host "==================================================`n" -ForegroundColor Cyan
+
 # Powershell script pour trouver le fichier .log le plus récent et chercher une erreur définitive dans une liste
 
 # Définissez le chemin du dossier
@@ -7,9 +15,9 @@ $folderPath = "C:\ProgramData\MICEN4\logs" # remplacez par votre chemin
 $latestLogFile = Get-ChildItem -Path $folderPath -Filter *.log | Sort-Object LastAccessTime -Descending | Select-Object -First 1
 
 # Imprimez le nom du fichier le plus récent avec une ligne de séparation
-Write-Host "`n==================================================`n"
-Write-Host "Fichier le plus récent: $($latestLogFile.FullName)" -ForegroundColor Cyan
-Write-Host "`n==================================================`n"
+Write-Host "`n==================================================`n" -ForegroundColor Cyan
+Write-Host "Fichier le plus récent: $($latestLogFile.FullName)" -ForegroundColor Yellow
+Write-Host "`n==================================================`n" -ForegroundColor Cyan
 
 # Utilisez Invoke-RestMethod pour obtenir le fichier JSON de la liste d'erreurs
 $url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/LogM/erreur.json?$(Get-Date -Format o)"
@@ -35,7 +43,7 @@ foreach ($err in $errorList) {
         Write-Host "Heure: $errorTime" -ForegroundColor Yellow
         Write-Host "Description: $($err.description)" -ForegroundColor Green
         Write-Host "Solution: $($err.solution)" -ForegroundColor White
-        Write-Host "`n==================================================`n"
+        Write-Host "`n==================================================`n" -ForegroundColor Cyan
         
         # Marquez l'erreur comme trouvée
         $foundErrors[$err.code] = $true
