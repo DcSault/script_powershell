@@ -1,12 +1,17 @@
-$indexUrl = "https://raw.githubusercontent.com/DcSault/script_powershell/main/index.ps1"
+# URL du script
+$scriptUrl = "https://raw.githubusercontent.com/DcSault/script_powershell/main/LogM/Script_LogM.ps1"
 
 # Utiliser le répertoire temporaire du système
 $tempDir = [System.IO.Path]::GetTempPath()
-$indexOutput = Join-Path -Path $tempDir -ChildPath "index.ps1"
+$scriptOutput = Join-Path -Path $tempDir -ChildPath "Script_LogM.ps1"
 
-# Télécharger l'index
-Invoke-WebRequest -Uri $indexUrl -OutFile $indexOutput
+# Supprimer le script s'il existe déjà
+if(Test-Path $scriptOutput){
+    Remove-Item $scriptOutput -Force
+}
 
-# Exécuter l'index et obtenir chaque URL
-$scriptUrls = Invoke-Expression -Command $indexOutput
+# Télécharger le script
+Invoke-WebRequest -Uri $scriptUrl -OutFile $scriptOutput
 
+# Exécuter le script
+Invoke-Expression -Command $scriptOutput
