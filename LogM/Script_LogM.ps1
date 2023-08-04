@@ -42,5 +42,15 @@ foreach ($err in $errorList) {
     }
 }
 
+# Pause et demande à l'utilisateur s'il souhaite ouvrir le fichier de journal
+Write-Host "`nVoulez-vous ouvrir le fichier de journal dans le Bloc-notes ? (O/N)`n"
+$input = Read-Host
+
+# Vérifiez si l'utilisateur a répondu par 'O' ou 'o'
+if ($input -eq "O" -or $input -eq "o") {
+    # Ouvrir le fichier de journal avec Notepad
+    Start-Process Notepad.exe -ArgumentList $latestLogFile.FullName
+}
+
 # Mettez le script en pause à la fin
 pause
