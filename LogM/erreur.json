@@ -2,7 +2,7 @@
   {
     "id": 1,
     "code": "Occurence Multiple",
-    "description": "AAE/AAED | Une ou plusieurs annexe et en double ou qui porte le même nom",
+    "description": "Une ou plusieurs annexe et en double ou qui porte le même nom",
     "solution": "Demander au client s'il n'y a pas une annexe en double ou qu'il porte deux fois le même nom",
     "tda": "03",
     "category": "Micen4"
