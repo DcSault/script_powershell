@@ -4,21 +4,13 @@
     "code": "Occurence Multiple",
     "description": "Une ou plusieurs annexe et en double ou qui porte le même nom",
     "solution": "Demander au client s'il n'y a pas une annexe en double ou qu'il porte deux fois le même nom",
-    "tda": "04",
+    "tda": "*",
     "category": "Micen4"
-  },
-  {
-    "id": 4,
-    "code": "Vive le support N3",
-    "description": "Le support N2 c'est moins bien",
-    "solution": " Abdessamad passe au support N3 !",
-    "tda": "TDA Abdessamad passe au support N3 !",
-    "category": "Inot"
   },
   {
     "id": 5,
     "code": "La séance de signature identifiée à partir des données de l'acte ne correspond pas à celle fournie par le notaire. Erreur sur l'objet de l'acte",
-    "description": "RULES_ACT_412 - Le nom de l'acte et beaucoup est trop long.",
+    "description": "Le nom de l'acte et beaucoup est trop long.",
     "solution": "il faut dubliquer l'acte et reduire la taille du nom de acte. ( 36 Caractere maximum ) ",
     "tda": "*",
     "category": "Micen4"
