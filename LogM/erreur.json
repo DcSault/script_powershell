@@ -14,13 +14,5 @@
     "solution": "il faut dubliquer l'acte et reduire la taille du nom de acte. ( 36 Caractere maximum ) ",
     "tda": "*",
     "category": "Micen4"
-  },
-  {
-    "id": 6,
-    "code": "La séance de signature identifiée à partir des données de l'acte ne correspond pas à celle fournie par le notaire. Erreur sur l'objet de l'acte",
-    "description": "RULES_ACT_412 - Le nom de l'acte et beaucoup est trop long.",
-    "solution": "il faut dubliquer l'acte et reduire la taille du nom de acte. ( 36 Caractere maximum )",
-    "tda": "*",
-    "category": "Micen4"
   }
 ]
