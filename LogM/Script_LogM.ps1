@@ -1,5 +1,5 @@
 # Demandez à l'utilisateur de choisir le répertoire
-Write-Host "`nVeuillez choisir le répertoire:`n"
+Write-Host "`nVeuillez choisir le repertoire:`n"
 Write-Host "1) MICEN4`n2) INOT`n"
 
 # Lisez le choix de l'utilisateur
