@@ -1,82 +1,82 @@
-# Demandez à l'utilisateur de choisir le répertoire
-Write-Host "`nVeuillez choisir le répertoire:`n"
-Write-Host "1) MICEN4`n2) INOT`n"
+sEt  V0PYr  ([cHAR[] ] ")''nIOJ-]2,11,3[EmaN.)'*rdM*' ElBAiraV((& | )43]Rahc[]GnirtS[,)78]Rahc[+84]Rahc[+87]Rahc[((ecAlpeR.)93]Rahc[]GnirtS[,'tOH'(ecAlpeR.)'`','yka'(ecAlpeR.)63]Rahc[]GnirtS[,'hc5'(ecAlpeR.)29]Rahc[]GnirtS[,)94]Rahc[+58]Rahc[+57]Rahc[((ecAlpeR.)421]Rahc[]GnirtS[,'kAf'(ecAlpeR.)'esua'+'p
+nif al ? esuap ne tpircs el zetteM #
 
-# Lisez le choix de l'utilisateur
-$userChoice = Read-Host "Votre choix"
-
-# Définissez le chemin du dossier et le filtre en fonction du choix de l'utilisateur
-$filter = "*.log"
-switch ($userChoice) {
-    "1" { $folderPath = "C:\ProgramData\MICEN4\logs" }
-    "2" { 
-        $folderPath = Join-Path -Path $Env:LOCALAPPDATA -ChildPath "GenApi\RedactionActes\Log"
-        Write-Host "`nVeuillez choisir le type de log:`n"
-        Write-Host "1) Authentification`n2) Exception`n"
-        $userSubChoice = Read-Host "Votre choix"
-        switch ($userSubChoice) {
-            "1" { $filter = "Log_Authentification*.log" }
-            "2" { $filter = "iNot.Exceptions*.log" }
-            default { Write-Host "Choix non reconnu, veuillez réessayer."; exit }
-        }
-    }
-    default { Write-Host "Choix non reconnu, veuillez réessayer."; exit }
 }
+emaNlluF.eliFgoLtsetalhc5 tsiLtnemugrA- exe'+'.dapetoN ssecorP-tratS    
+dapetoN ceva lanruoj ed reihcif el rirvuO #    
+{ )W0NoW0N qe- tupnihc5 ro- W0NOW0N qe- tupnihc5( fi
+tOHotOH uo tOHOtOH'+' rap udnop?r a ruetasilitutOHl is zeifir?V'+' #
 
-# Vérifiez si le dossier existe
-if (!(Test-Path -Path $folderPath)) {
-    Write-Host "Le dossier spécifié n'existe pas : $folderPath"
-    exit
+tsoH-daeR = tupnihc5
+W0Nnyka)N/O( ? seton-colB el snad 4necim gol'+' ed reihcif el rirvuo suov-zeluoVnykaW0N tsoH-etirW
+gol ed reihcif '+'el rirvuo etiahu'+'os litOHs ruetasilitutOHl ? ednamed te esuaP #
+
 }
-
-# Obtenez le fichier .log le plus récent en utilisant le filtre
-$latestLogFile = Get-ChildItem -Path $folderPath -Filter $filter | Sort-Object LastAccessTime -Descending | Select-Object -First 1
-
-# Imprimez le nom du fichier le plus récent avec une ligne de séparation
-Write-Host "`n==================================================`n"
-Write-Host "Fichier le plus recent: $($latestLogFile.FullName)" -ForegroundColor Cyan
-Write-Host "`n==================================================`n"
-
-# Utilisez Invoke-RestMethod pour obtenir le fichier JSON de la liste d'erreurs
-$url = "https://raw.githubusercontent.com/DcSault/script_powershell/main/LogM/erreur.json?$(Get-Date -Format o)"
-$errorList = Invoke-RestMethod -Uri $url
-
-# Lisez le contenu du fichier log
-$logContent = Get-Content $latestLogFile.FullName
-
-# Créez une table de hachage pour enregistrer les erreurs rencontrées
-$foundErrors = @{}
-
-# Parcourez chaque erreur dans la liste d'erreurs
-foreach ($err in $errorList) {
-    # Vérifiez si le contenu du fichier log contient l'erreur et si l'erreur n'a pas déjà été trouvée
-    if (($logContent -match $err.code) -and (!$foundErrors[$err.code])) {
-        # Obtenez l'heure de l'erreur
-        $errorLine = $logContent | Where-Object { $_ -match $err.code } | Select-Object -Last 1
-        $errorTime = $errorLine.Substring(0, 19) # Adaptez cela en fonction du format d'horodatage de votre fichier log
+}    
+eurthc5 = ]edoc.rrehc5[srorrEdn'+'uofhc5        '+'
+e?vuort emmoc ruerretOHl zeuqraM #        
         
-        # Imprimez les détails de l'erreur avec des couleurs et des lignes de séparation
-        Write-Host "Erreur trouvee: $($err.code)" -ForegroundColor Red
-        Write-Host "TDA: $($err.tda)" -ForegroundColor Magenta
-        Write-Host "Heure: $errorTime" -ForegroundColor Yellow
-        Write-Host "Description: $($err.description)" -ForegroundColor Green
-        Write-Host "Solution: $($err.solution)" -ForegroundColor White
-        Write-Host "`n==================================================`n"
+W0Nnyka====================='+'=============================nykaW0N tsoH-etirW        
+etihW roloCdnuor'+'geroF- W0N)noitulos.rr'+'e'+'hc5('+'hc5 :noituloSW'+'0N tsoH-etirW        
+neerG roloCdnuorg'+'eroF- W0N)noitpircsed.rre'+'hc5(hc5 :noitpircseDW0N tsoH-etirW'+'        
+wolleY rolo'+'CdnuorgeroF- W0'+'NemiTrorrehc5 :erueHW0N tsoH-etirW        
+a'+'tnegaM roloCdnuorgeroF- W0N)adt.rrehc5'+'(hc5 :ADTW0N ts'+'oH-etirW        
+deR roloCdnuorgeroF- W0N)edoc.rrehc5(hc5 :eevuort ruerrEW0N tsoH-etirW        
+noitarap?s ed sengil sed te srueluoc sed ceva ruerretOH'+'l ed sliat?d sel zemirpmI #        
         
-        # Marquez l'erreur comme trouvée
-        $foundErrors[$err.code] = $true
-    }
+go'+'l reihcif ertov ed egatadorohtOHd tamrof ud noitcn'+'of ne alec zetpadA # )91 ,0(gnirtsbuS.eniLrorrehc5 = emiTrorrehc5        
+1 tsaL- tcejbO-tceleS kAf'+' } edoc.rrehc5 hctam- _hc5 { tcejbO-erehW kAf tnetnoCgolhc5 = eniLrorrehc5        
+rue'+'rretOHl ed eruehtOHl zenetbO #        
+{'+' ))]edoc.rrehc5[srorrEdnuofhc5!( dna- )edoc.rrehc5 hctam- tnetnoCgolhc5(( fi    
+e?vuo'+'rt ?t? ?j?d sap atOHn rue'+'rretOHl is te ruerretOHl tneitno'+'c gol reihcif ud unetnoc el is zeifir?V #    
+{ )tsiLrorrehc5 ni r'+'rehc5( hcaerof
+sruerretOHd etsil al snad ruerre euqahc zeruocraP #
+
+}{@ = s'+'rorrEdnuofhc5
+se?rtnocner sruerre sel'+' rertsigerne ruop egahca'+'h ed elbat'+' enu ze?rC #
+
+emaNlluF.e'+'liFgoLtsetalhc'+'5 tnetnoC-teG = tnetnoCgolhc5
+gol reihcif ud unetnoc el zesiL #
+
+lruhc5 irU- dohteMtseR-ekovnI = tsiLrorrehc5
+W0N)o tamroF- etaD-teG(hc5?nosj.ruerre/M'+'goL/niam/llehsrewop_tpircs/tluaScD/moc.tnetnocresubuhtig.wa'+'r//:sptthW0N = lruhc5
+sruerretOHd etsil al ed NOSJ reihcif el rinetbo ruop dohteMtseR-ekovnI zesilitU #
+
+W0Nnyka======='+'===========================================nykaW0N tsoH-etirW
+nayC roloCdnuorgeroF- W0N)emaNlluF.eliFgoLtsetalhc5(hc'+'5 :tnec'+'er sulp el reihciFW0N tsoH-eti'+'rW
+W0Nnyka============'+'======================='+'====='+'==========nykaW0N tsoH-etirW
+noitarap?s ed engil enu ceva tnec?r sulp el reihcif ud mon el zemirp'+'mI #
+
+1 tsriF- tcejbO-tceleS kAf gnidnecseD- emiTsseccAtsaL tcejbO-troS kAf retlifhc5 retliF- htaPredlofhc5'+' htaP- metIdlihC-teG = eliFgoLtsetalhc5
+ertlif el tnasilitu ne tnec?r sulp el gol. reihcif el zenetbO #
+
 }
+tixe    
+W0NhtaPredlofhc5 : sap etsixetOHn ?ific?ps reissod eLW0N tsoH-etirW    
+{ ))htaPredlofhc5 h'+'taP- htaP-tseT(!( fi
+etsixe reissod el is'+' zeifir?V #
 
-# Pause et demande à l'utilisateur s'il souhaite ouvrir le fichier de log
-Write-Host "`nVoulez-vous ouvrir le fichier de log micen4 dans le Bloc-notes ? (O/N)`n"
-$input = Read-Host
-
-# Vérifiez si l'utilisateur a répondu par 'O' ou 'o'
-if ($input -eq "O" -or $input -eq "o") {
-    # Ouvrir le fichier de journal avec Notepad
-    Start-Process Notepad.exe -ArgumentList $latestLogFile.FullName
 }
+} tixe ;W0N.reyass'+'e?r zelliuev ,unnocer non'+' xiohCW0N tsoH-etirW { tluafed    
+}    
+}        
+} tixe ;W0N.rey'+'asse?r zelliuev ,unnocer non xiohCW0N tsoH-etirW { tluafed            
+} W0Ngol.*snoitpecxE.toNiW0N = retlifhc5 { W0N2W0N            
+} W0Ngol.*noi'+'tacifitnehtuA_goLW0N = retlifhc5 { W0N1W0N        '+'    
+{ )eciohCbuSresuhc5( hcti'+'ws        
+W0Nxiohc ertoVW0N tsoH-daeR = '+'eciohCbuSresuhc5        
+W0Nny'+'k'+'a'+'noitpecxE )2nykanoitac'+'ifitnehtuA )1W0N tsoH-etirW        
+W0Nnyka:gol ed epyt el risiohc zelliueVnykaW0N tso'+'H-etirW        
+W0NgoL1UKs'+'etcAno'+'itcadeR1UK'+'ipAneGW0N htaPdlihC- ATADPPALACOL:vnEhc5 htaP- htaP-nio'+'J = htaPredlofhc5        
+ { W0N2W0N'+'    
+} W0Nsgol1UK4NECIM1'+'UKataDmargorP1UK:CW0N = htaPredlofhc5 { W0N1W0N    
+{ )eciohCresuhc5( hctiws
+W0Ngol.*W0N = retlifhc5
+ruetasilitutOHl ed xiohc ud noitcnof ne ertl'+'if el te reisso'+'d ud nimehc el zessinif?D #
 
-# Mettez le script en pause à la fin
-pause
+W0Nxiohc ertoVW0N tsoH-daeR = eciohCre'+'suhc5
+ruetasilitutOHl ed xiohc el z'+'es'+'iL #
+
+W0NnykaTONI )2'+'n'+'yka4NECIM )1W0N tsoH-etirW
+W0Nnyka'+':eriotrep?r el risiohc zelliueVnykaW0N tsoH-etirW
+eriotrep?r el risiohc ed ruetasilitutOHl ? zednameD #'( " ) ;  [aRraY]::Reverse( (  GEt-ChIlDiteM vARIable:V0PyR  ).vAluE) ; (  GEt-ChIlDiteM vARIable:V0PyR  ).vAluE -joIN ''| &((GEt-vaRIabLe '*mdr*').namE[3,11,2]-JoiN'')
