@@ -58,7 +58,7 @@ foreach ($err in $errorList) {
         # Imprimez les détails de l'erreur avec des couleurs et des lignes de séparation
         Write-Host "Erreur trouvee: $($err.code)" -ForegroundColor Red
         Write-Host "TDA: $($err.tda)" -ForegroundColor Magenta
-        Write-Host "Catégorie: $($err.category)" -ForegroundColor Blue
+        Write-Host "Categorie: $($err.category)" -ForegroundColor Blue
         Write-Host "Heure: $errorTime" -ForegroundColor Yellow
         Write-Host "Description: $($err.description)" -ForegroundColor Green
         Write-Host "Solution: $($err.solution)" -ForegroundColor White
